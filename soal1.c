@@ -87,15 +87,14 @@ void waktuTunggu(queue *Q, int* count, int* size){
     int next = 0;
     int tempawal = temp->d;
     int tempnextnya = temp->next->d;
-    *count = temp->d; //3
-    //*count = *count + temp->d + temp->next->d;// 3+3+5
+    *count = temp->d;
+    *count = *count +  2 * tempawal + tempnextnya;
 
-        *count = *count + tempawal + tempnextnya;
-        *count = *count + tempawal + tempnextnya;
+    temp = temp->next;
 
     while(temp->next != NULL){
+        *count = *count + temp->d;
         temp = temp->next;
-        *count = *count + temp->next->d;
     }
 
 }
